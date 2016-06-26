@@ -6,7 +6,7 @@ ab = [a, b]'; % 2abN row vector
 % plot(a); hold on; plot(b);
 
 %% sample data
-ab = ab(:,1:256);  % arbitrary smaller sample for demo
+% ab = ab(:,1:256);  % arbitrary smaller sample for demo
 
 %% center data
 ab_mean = repmat(mean(ab,2),1,size(ab,2));  % tmp 2abN row vector
@@ -36,8 +36,8 @@ a_plus_b = repmat(sum(Y.*Y,1),size(Y,1),1);  % row a + b duplicated (2 x N)
 ab_unmix = U*ab; % U is unmixing matrix
 
 %% Plot
-subplot(2,2,1); plot(a); title('mixed audio - mic 1');
-subplot(2,2,2); plot(b); title('mixed audio - mic 2');
+subplot(2,2,1); plot(a, 'b'); title('mixed audio - mic 1');
+subplot(2,2,2); plot(b, 'c'); title('mixed audio - mic 2');
 subplot(2,2,3); plot(ab_unmix(1,:), 'g'); title('unmixed wave 1');
 subplot(2,2,4); plot(ab_unmix(2,:),'r'); title('unmixed wave 2');
 
